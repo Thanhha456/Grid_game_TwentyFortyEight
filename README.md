@@ -1,10 +1,18 @@
-#**MiniProject: TwentyFortyEight Game**  
-*Overview*
+Project for assessment in "Principles of Computing (Part 1)" course at Rice university.  
+https://www.coursera.org/learn/principles-of-computing-1?specialization=computer-fundamentals  
 
-2048 is a simple grid-based numbers game. The object of the game is to combine tiles with the same number to make larger numbered tiles. Yo$
+#**MiniProject: TwentyFortyEight Game**  
+
+*Overview*  
+
+2048 is a simple grid-based numbers game.Although the original game is played on a 4×4 grid, your version should be able to have an arbitrary height and width. The object of the game is to combine tiles with the same number to make larger numbered tiles. You
+ "win" when you create a 2048 tile.  
+
 Moving: Sliding and Merging.  
 
-On each turn, you may slide all of the tiles on the board in one direction (left, right, up, or down). When you do so, all of the tiles on $
+On each turn, you may slide all of the tiles on the board in one direction (left, right, up, or down). When you do so, all of the tiles on the board slide as far as they can go in the given direction leaving no empty squares between the tiles. Further, if two tiles of the same nu
+mber end up next to each other, they merge to form a new tile with twice the value. If no tiles would slide or combine in a given direction,
+ then that is not a legal move, and you cannot make that move on the current turn.  
 
 To understand how the tiles slide and merge, consider the following game board:
 
@@ -19,27 +27,20 @@ In the second row, the single "4" tile just slides all the way to the right.
 In the bottom two rows, a pair of matching tiles merge. Note that it does not matter if there were empty squares between the tiles befor
 e they slid. The merge happens to adjacent tiles after they have slid over as far as possible.  
 In the bottom row, only one pair of "4" tiles merge. In particular, the two tiles furthest to the right are the two that merged. This is because you moved right. Had you moved left, for instance, the two tiles furthest to the left would have merged instead.  
-If instead, you had moved up starting from the original board, then the tiles would have slid and merged to yield the following final positi
-on:
-
+If instead, you had moved up starting from the original board, then the tiles would have slid and merged to yield the following final position:  
 Note the following about how the tiles slide and merge here:  
-In the left column, the first two "2" tiles merged to become a "4" tile. This "4" tile, however, did not merge with the existing "4" til
-e, as tiles can only merge once on a turn.  
+In the left column, the first two "2" tiles merged to become a "4" tile. This "4" tile, however, did not merge with the existing "4" tile, as tiles can only merge once on a turn.  
 In all of the other columns, the tiles just slid up as far as they could go with no further merging.  
 
 Adding New Tiles  
-Finally, after all of the tiles have slid and merged, a new tile is added to the board randomly. Note that a new tile is added only if the m
-ove actually changed the board in any way (meaning that either at least one tile slid and/or one pair of tiles merged). Otherwise, that dire
-ction was not a legal move and nothing should happen. 
-The new tile is added to a randomly selected empty grid square after the tiles have moved and slid. The new tile is either a "2" or a "4". I
-n our version of the game, the value of the new tile should be randomly selected such that it has a value of "2" roughly 90% of the time and
- a value of "4" roughly 10% of the time.  
+
+
+Finally, after all of the tiles have slid and merged, a new tile is added to the board randomly. Note that a new tile is added only if the move actually changed the board in any way (meaning that either at least one tile slid and/or one pair of tiles merged). Otherwise, that direction was not a legal move and nothing should happen. 
+The new tile is added to a randomly selected empty grid square after the tiles have moved and slid. The new tile is either a "2" or a "4". In our version of the game, the value of the new tile should be randomly selected such that it has a value of "2" roughly 90% of the time and a value of "4" roughly 10% of the time.  
 
 The Initial Board  
 
-The game starts with a board that has two initial tiles on it. You can think of this board as an empty board with two tiles added, using the
- procedure described above for adding new tiles. Each tile will either have a value of "2" or "4". And, as described above, the value of a t
-ile will be "2" roughly 90% of the time. 
+The game starts with a board that has two initial tiles on it. You can think of this board as an empty board with two tiles added, using the procedure described above for adding new tiles. Each tile will either have a value of "2" or "4". And, as described above, the value of a tile will be "2" roughly 90% of the time. 
  
 Ending the Game  
 
